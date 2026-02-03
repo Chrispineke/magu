@@ -1,0 +1,96 @@
+:root {
+    --m-red: #ff4d6d;
+    --f-blue: #00f2ff;
+    --bg: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background: var(--bg);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app { width: 90%; max-width: 450px; text-align: center; }
+
+/* The Glowing Sensor */
+#orb {
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.phase-menstrual { background: var(--m-red); box-shadow: 0 0 50px var(--m-red); }
+.phase-follicular { background: var(--f-blue); box-shadow: 0 0 50px var(--f-blue); }
+
+/* Dashboard Cards */
+.dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+.card {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.console { margin-top: 20px; font-family: monospace; opacity: 0.7; }
+
+/* Pulse Animation when listening */
+.active-sync { animation: pulse 1.5s infinite; }
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--f-blue); color: black; padding: 10px 20px;
+    border-radius: 5px; font-weight: bold; display: none;
+}
+/* Security Overlay Styles */
+#lock-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lock-box {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--f-blue);
+    text-align: center;
+}
+
+input[type="password"] {
+    background: transparent;
+    border: 1px solid var(--f-blue);
+    color: white;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.btn-lock {
+    background: transparent;
+    border: 1px solid #ff4d6d;
+    color: #ff4d6d;
+    margin-top: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

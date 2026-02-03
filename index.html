@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowAI | Neural Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lock-screen">
+        <div class="lock-box">
+            <h2>CHRIS<span>AI</span> SECURITY</h2>
+            <p>Enter Biometric Pin to Access Flow</p>
+            <input type="password" id="pin-input" placeholder="****">
+            <button onclick="unlockApp()">ACCESS DATA</button>
+        </div>
+    </div>
+
+    <div id="app" style="display:none;">
+        <header>
+            <div id="neural-tag">NEURAL LINK: SECURE</div>
+            <div id="orb" class="phase-menstrual" onclick="startBiometricSync()"></div>
+            <h1>FLOW<span>AI</span></h1>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Current Phase</h3>
+                <p id="phase-display">CALIBRATING...</p>
+            </div>
+            <div class="card">
+                <h3>Prediction</h3>
+                <p id="next-date">---</p>
+            </div>
+        </div>
+
+        <div class="console">
+            <div id="transcript">Click orb to sync voice...</div>
+            <button onclick="lockApp()" class="btn-lock">Lock System</button>
+        </div>
+    </div>
+
+    <div id="toast">SYSTEM MESSAGE: SYNC COMPLETE</div>
+    <script src="script.js"></script>
+</body>
+</html>
